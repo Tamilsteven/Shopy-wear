@@ -1,96 +1,201 @@
-
-.cont{
-   background-color: rgb(197, 230, 240);
-   padding-top: 3%;
-   z-index: 1;
-   text-align: center;
-   overflow: hidden;
+.cont {
+    background-color: rgb(197, 230, 240);
+    padding: 3rem 1rem;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
 }
-.cat{
+
+.cat {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: blue;
-    margin-top: -1%;
-    padding-left: 1%;
-    padding-bottom: 1%;
-    font-size: 0.9em;
-    
-}
-h2{
-    text-align: center;
-}
-.cards{
-    display:inline-block;
-    justify-content:center;
-    margin: 2em 3em;
-    padding-bottom: 2%;
-    border-radius: 3px;
-    /* transform: scale(1.1); */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
 }
 
-.view{
-  background-color:whitesmoke;
-  border-radius: 2px;
-  height: 23rem;
-  width: 16em;
-  text-align: center;
-  font-family: 'Hahmlet', serif;
-  
+.cat-btn {
+    background: transparent;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-.pics{
-    height: 15em;
+
+.cat-btn:hover, .cat-btn.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: inline-block;
+    margin: 0.5rem;
+    padding-bottom: 2%;
+    border-radius: 4px;
+}
+
+.view {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    height: 23rem;
     width: 16em;
+    text-align: center;
+    font-family: 'Hahmlet', serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.view:hover {
+    transform: translateY(-5px);
+}
+
+.view h5 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.25rem 0;
+    padding: 0 0.5rem;
+}
+
+.view p {
+    font-weight: 600;
+    color: #198754;
+    margin-bottom: 0.5rem;
+}
+
+.pics {
+    height: 14em;
+    width: 100%;
     object-fit: cover;
     margin-bottom: 2%;
-    opacity: 1px;
-    /* transition: 2s all; */
 }
 
-.shop-btn{
+.shop-btn {
     background-color: black;
     color: white;
     border: none;
-    height: 2em;
+    height: 2.2em;
+    width: 80%;
+    margin: 0 auto;
     text-align: center;
     font-size: 0.9rem;
     font-family: 'Protest Riot', sans-serif;
     transition: 0.2s ease-in-out;
+    border-radius: 2px;
+    cursor: pointer;
 }
-.shop-btn:hover{
-   transform: scalex(1.2);
+
+.shop-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
 }
-.back{
-    /* position: sticky; */
+
+.back {
+    position: relative;
     top: 0;
     left: 0;
     overflow: hidden;
-    /* z-index: -1; */
 }
-.parag{
+
+.parag {
     color: white;
-    font-size: 5em;
+    font-size: clamp(2rem, 5vw, 4.5rem);
     font-weight: 500;
-    margin-top: -3.5em;
+    margin-top: -2.5em;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-family: 'Protest Riot', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
 }
-.back-img{
-    height: 70vh;
+
+.back-img {
+    height: 60vh;
+    min-height: 350px;
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
 }
+
 /* ----------------carousel---------------*/
-.carousel{
-    background-color:lavenderblush;
+.carousel {
+    background-color: lavenderblush;
     text-align: center;
-    padding-top: 10%;
-    height: 70vh;
-    z-index: -1;
-   
+    padding: 3rem 1rem;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
-.slide{
-    margin-top: 2%;
-    height: 17vh;
-    width: 50vh;
+
+.carousel h3 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+    font-family: 'Old Standard TT', serif;
+}
+
+.slide {
+    height: 120px;
+    max-width: 280px;
+    width: auto;
+    object-fit: contain;
+    margin: 1rem auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .back-img {
+        height: 45vh;
+        min-height: 280px;
+    }
+
+    .parag {
+        margin-top: -2.8em;
+        margin-bottom: 1em;
+    }
+
+    .carousel {
+        padding: 2rem 0.5rem;
+    }
+
+    .slide {
+        height: 80px;
+        max-width: 200px;
+    }
+
+    .cards {
+        margin: 0.5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .view {
+        width: 18em;
+        max-width: 90vw;
+    }
 }

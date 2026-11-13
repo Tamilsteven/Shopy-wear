@@ -1,82 +1,163 @@
-.grid{
-    display: inline-flex;
-    margin-left: 8%;
-    margin-top:5% ;
-  
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
 }
-.contacts{
-    padding: 4em;
-    margin-left: 3%;
-    margin-top: 5%;
-    font-size: 1.1rem;
+
+.contacts {
+    padding: 3rem 2.5rem;
+    font-size: 1.05rem;
     background-color: rgb(242, 206, 206);
-    height: 35ch;
-    width: 80vh;
+    flex: 1 1 380px;
+    max-width: 500px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.detail{
-font-size: 1em;
-padding-left: -4%;
-    
+
+.contacts h3 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
-.text-left{
-      text-align: left;
-      
+
+.contacts ul {
+    padding-left: 0;
+    margin-top: 1.5rem;
+    list-style: none;
 }
+
+.contacts li p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.detail {
+    font-size: 1em;
+}
+
+.text-left {
+    text-align: left;
+}
+
 .form-wrapper {
-     text-align: center;
-     font-weight: bold;
-     padding:4rem 5rem ;
-     margin: -10px;
-     height: 60vh;
-     background-color: whitesmoke;
-     border-radius: 3px;
-  
-  }
-  .full-input {
-    display:inline-block;
-    padding: 3px;
-    width: 100%;
-    border:0.5px solid black ;
-    overflow: hidden;
-  }
-  input {
+    text-align: center;
+    font-weight: bold;
+    padding: 3rem 2.5rem;
     background-color: whitesmoke;
-    outline: none;
-    border: none;
-    display:block;
-    height: 16px;
-    width: 15rem;
-    overflow: hidden;
-    text-size-adjust: 0.7em;
-  }
-  label {
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1 1 380px;
+    max-width: 500px;
+}
+
+.form-wrapper h3 {
+    font-family: 'Old Standard TT', serif;
+    margin-bottom: 1.5rem;
+}
+
+.form-wrapper .full-input {
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    margin-bottom: 0.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-wrapper .full-input:focus-within {
+    border-color: #000;
+}
+
+.form-wrapper label {
     text-align: left;
     display: block;
-    font-size: 8px;
-    
-    
-  }
-  input::placeholder{
-    font-size: 0.6em;
-  
-  }
-  textarea{
-    width: 36vh;
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.form-wrapper input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: block;
+    height: 28px;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.form-wrapper input::placeholder {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.form-wrapper textarea {
+    width: 100%;
+    min-height: 80px;
     display: block;
     outline: none;
     border: none;
-    background-color: whitesmoke;
-  }
-  textarea::placeholder{
-    font-size: 0.6em;
-  }
-  .c-btn{
-    margin-top: 4%;
-    width: 38.5vh;
+    background-color: transparent;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.form-wrapper textarea::placeholder {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.c-btn {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
     border-radius: 30px;
     border: none;
     outline: none;
     color: white;
     background-color: black;
-    height: 2.2em;
-  }
+    height: 2.8em;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.c-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5rem auto;
+    }
+
+    .contacts, .form-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+}
